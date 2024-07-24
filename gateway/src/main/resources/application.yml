@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: gateway
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
   datasource:
     url: jdbc:mysql://localhost:3306/craftUser
     username: root
@@ -16,31 +19,24 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
-
-
-  cloud:
-    gateway:
-      routes:
-        - id: onboarding
-          uri: lb://onboarding
-          predicates:
-            - Path=/onboarding/**
-          filters:
-            - StripPrefix=1
-        - id: order
-          uri: lb://order
-          predicates:
-            - Path=/order/**
-          filters:
-            - StripPrefix=1
-        - id: inventory
-          uri: lb://inventory
-          predicates:
-            - Path=/inventory/**
-          filters:
-            - StripPrefix=1
-
-
-
-
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: onboarding
+#          uri: lb://onboarding
+#          predicates:
+#            - Path=/onboarding/**
+#          filters:
+#            - StripPrefix=1
+#        - id: order
+#          uri: lb://order
+#          predicates:
+#            - Path=/order/**
+#          filters:
+#            - StripPrefix=1
+#        - id: inventory
+#          uri: lb://inventory
+#          predicates:
+#            - Path=/inventory/**
+#          filters:
+#            - StripPrefix=1

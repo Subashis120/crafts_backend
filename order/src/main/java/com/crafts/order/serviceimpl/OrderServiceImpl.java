@@ -1,5 +1,6 @@
 package com.crafts.order.serviceimpl;
 
+import com.crafts.order.common.Store;
 import com.crafts.order.model.Order;
 import com.crafts.order.repository.OrderRepository;
 import com.crafts.order.service.InventoryService;
@@ -21,10 +22,12 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private InventoryService inventoryService;
 
+    @Autowired
+    private Store store;
+
     @Override
     public List<Order> getOrder() {
-        ResponseEntity<String> inventory = inventoryService.getInventory();
-        System.out.println(inventory.getBody());
+        ResponseEntity<String> inventory = inventoryService.getInventory(store.getToken());
         return orderRepository.findAll();
     }
 

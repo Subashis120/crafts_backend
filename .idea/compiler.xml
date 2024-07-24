@@ -10,6 +10,7 @@
         <module name="onboarding" />
         <module name="c" />
         <module name="inventory" />
+        <module name="auth" />
         <module name="discovery" />
         <module name="gateway" />
       </profile>
@@ -17,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth" options="-parameters" />
       <module name="c" options="-parameters" />
       <module name="discovery" options="-parameters" />
       <module name="gateway" options="-parameters" />
