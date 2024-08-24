@@ -4,6 +4,12 @@ use docker pull suba8991/micro-services:{tag-name} or visit https://hub.docker.c
 
 port numbers are defined in the application.yml file of each service.
 
+after cloning the project maven clean, install is required.
+
 first step is to run the discovery image.
 
 authentication is provided by custom oauth2 resource server.
+
+Technology Used - Java, Spring Boot, React
+Architecture - Micro Services, API Gateway
+IDE - IntelliJ
