@@ -6,34 +6,26 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-@Document(collection = "inventory")
+@Document(collection = "cart")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Inventory extends Base implements Serializable {
+public class Cart extends Base implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     @Id
     private String id;
 
     @NonNull
-    private String itemName;
-    @NonNull
-    private String category;
-    @NonNull
-    private String stock;
+    private String userId;
     @NonNull
     private String itemId;
-
-    private String price;
-
-    private String color;
-
-    private List<String> images = new ArrayList<>();
-
+    @NonNull
+    private String quantity;
+    @NonNull
+    private String totalPrice;
 }

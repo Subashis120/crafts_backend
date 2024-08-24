@@ -49,6 +49,7 @@ public class ServerSecurityConfig extends SecurityConfigurerAdapter<DefaultSecur
     @Order(1)
     @Bean
     public SecurityFilterChain signInSecurityFilterChain(HttpSecurity httpSecurity) throws Exception{
+        System.out.println("auth1");
         return httpSecurity
                 .securityMatcher(new AntPathRequestMatcher("/oauth2/**"))
                 .csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable())
@@ -64,7 +65,7 @@ public class ServerSecurityConfig extends SecurityConfigurerAdapter<DefaultSecur
 
     @Order(2)
     @Bean
-    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity httpSecurity) throws Exception{
+    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity httpSecurity ) throws Exception{
         return httpSecurity
                 .csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable())
                 .authorizeHttpRequests(auth -> {

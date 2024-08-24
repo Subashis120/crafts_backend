@@ -35,6 +35,7 @@ public class JwtAccessTokenFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
 
+        log.info("inside auth");
         try{
             log.info("[JwtAccessTokenFilter:doFilterInternal] :: Started ");
 

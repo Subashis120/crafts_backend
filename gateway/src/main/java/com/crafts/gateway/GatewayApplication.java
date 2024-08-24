@@ -1,4 +1,4 @@
-package com.crafts.order;
+package com.crafts.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +16,7 @@ public class GatewayApplication {
 
 	@Bean
 	public RouteLocator myRoutes(RouteLocatorBuilder builder) {
+		System.out.println("gateway1");
 		return builder.routes()
 				.route("inventory",r -> r.path("/inventory/**")
 						.filters(f -> f.stripPrefix(1))

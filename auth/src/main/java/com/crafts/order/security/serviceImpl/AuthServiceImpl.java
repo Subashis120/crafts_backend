@@ -49,6 +49,8 @@ public class AuthServiceImpl implements AuthService {
                     .userName(craftUser.getEmail())
                     .userRoles(craftUser.getAuthorities().stream().map(auth -> auth.getAuthority()).collect(Collectors.toUnmodifiableList()))
                     .tokenType(TokenType.Bearer)
+                    .id(craftUser.getId())
+                    .name(craftUser.getFullName())
                     .build();
 
 
